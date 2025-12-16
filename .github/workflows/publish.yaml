@@ -33,6 +33,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: install tools
+        run: |
+          sudo BIN=/usr/local/bin make install-tools
       - name: determine version
         id: version
         run: |

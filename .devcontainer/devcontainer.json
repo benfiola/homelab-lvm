@@ -17,5 +17,6 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "image": "ubuntu:latest"
+  "image": "ubuntu:latest",
+  "postCreateCommand": ".devcontainer/post-create.sh"
 }
