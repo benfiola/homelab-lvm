@@ -1,0 +1,23 @@
+version: 2
+
+project_name: homelab-helper
+
+builds:
+  - skip: true
+
+dockers_v2:
+  - dockerfile: .goreleaser.Dockerfile
+    images:
+      - ghcr.io/benfiola/{{ .ProjectName }}
+    platforms:
+      - linux/amd64
+      - linux/arm64
+    tags:
+      - "{{.Version}}"
+
+release:
+  footer: |
+    **Docker Image:** `ghcr.io/benfiola/homelab-lvm:{{ .Version }}`
+
+changelog:
+  use: github-native
